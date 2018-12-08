@@ -1,7 +1,6 @@
-package org.bh.tools.base.annotations
+package org.bh.tools.base.shim
 
 import kotlin.annotation.*
-import kotlin.js.*
 import kotlin.reflect.*
 
 /*
@@ -33,6 +32,14 @@ external object Console {
     fun assert(condition: Boolean, vararg objects: Any)
     fun assert(condition: Boolean, message: String, vararg substitutions: Any)
 }
+
+
+@Target(AnnotationTarget.FUNCTION,
+        AnnotationTarget.PROPERTY,
+        AnnotationTarget.PROPERTY_GETTER,
+        AnnotationTarget.PROPERTY_SETTER)
+@MustBeDocumented
+annotation class JvmStatic
 
 
 
